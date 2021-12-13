@@ -4,7 +4,7 @@ import { useState } from 'react';
 import BurgerMenu from './BurgerMenu';
 
 
-export default function Header1() {
+export default function Header() {
 
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
