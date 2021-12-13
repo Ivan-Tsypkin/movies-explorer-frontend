@@ -1,0 +1,147 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
+  padding: 75px 30px 70px 30px;
+  max-width: 440px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 600px) {
+  .login {
+    align-items: center;
+  }
+}
+
+.login__heading {
+  margin: 40px 0;
+  max-width: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.21;
+  color: #ffffff;
+}
+
+.login__form {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+}
+
+.login__form-item-label {
+  margin-bottom: 10px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.21;
+  color: #8B8B8B;
+}
+
+.login__form-item-label:not(:first-of-type) {
+  margin-top: 20px;
+}
+
+.login__form-item {
+  display: block;
+  padding: 0;
+  padding-left: 15px;
+  border: 0;
+  border-radius: 8px;
+  height: 46px;
+  background-color: #2F2F2F;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.21;
+  color: #FFFFFF;
+}
+
+.login__submit-button {
+  display: block;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  margin-top: 178px;
+  width: 100%;
+  height: 45px;
+  background-color: #4285F4;
+  border-radius: 3px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: opacity 0.5s linear;
+}
+
+@media screen and (max-width: 600px) {
+  .login__submit-button {
+    font-size: 11px;
+  }
+}
+
+.login__submit-button:hover {
+  opacity: 0.6;
+}
+
+.login__register {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #8B8B8B;
+}
+
+@media screen and (max-width: 600px) {
+  .login__register {
+    font-size: 12px;
+  }
+}
+
+.login__register-link {
+  display: flex;
+  padding: 0;
+  color: #4285F4;
+  text-decoration: none;
+  transition: opacity 0.5s linear;
+}
+
+.login__register-link:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.login__error {
+  display: none;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.21;
+  color: #EE3465;
+}
+
+.login__error_visible {
+  display: block;
+}
+
+.login__error_type_email {
+  position: absolute;
+  top: 67px;
+}
+
+.login__error_type_password {
+  position: absolute;
+  top: 155px;
+}

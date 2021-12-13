@@ -1,0 +1,233 @@
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 70px;
+  max-width: 1280px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio {
+    padding: 90px 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio {
+    padding: 70px 14px;
+  }
+}
+
+.portfolio__heading {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 23px 0;
+  display: flex;
+  border-bottom: 1px solid #DADADA;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.21;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio__heading {
+    font-size: 18px;
+  }
+}
+
+.portfolio__about-me-section {
+  width: 100%;
+  padding: 66px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio__about-me-section {
+    padding: 60px 0 0 0;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.portfolio__my-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio__my-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+  }
+}
+
+.portfolio__my-name {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1.16;
+  color: #FFFFFF;
+  letter-spacing: -0.04em;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio__my-name {
+    margin-top: 40px;
+    font-size: 30px;
+    line-height: 1.21;
+  }
+}
+
+.portfolio__my-job {
+  margin: 18px 0 26px 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.11;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio__my-job {
+    margin: 20px 0 0 0;
+    font-size: 11px;
+    line-height: 1.21;
+  }
+}
+
+.portfolio__about-me-description {
+  margin: 0;
+  max-width: 600px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.57;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio__about-me-description {
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 1.21;
+  }
+}
+
+.portfolio__my-foto {
+  border-radius: 10px;
+  width: 270px;
+  height: 327px;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio__my-foto {
+    width: 292px;
+    height: 352px;
+  }
+}
+
+.portfolio__social-links-list {
+  margin: 0;
+  margin-top: auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  column-gap: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio__social-links-list {
+    margin-top: 40px;
+  }
+}
+
+.portfolio__social-link {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 0.5s linear;
+}
+
+.portfolio__social-link:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.portfolio__project-links-heading {
+  margin: 100px 0 30px 0;
+  align-self: flex-start;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.11;
+  color: #8B8B8B;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio__project-links-heading {
+    margin: 70px 0 40px 0;
+  }
+}
+
+.portfolio__project-links-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio__project-links-list-item {
+  border-bottom: 1px solid #424242;
+}
+
+.portfolio__project-links-list-item:last-of-type {
+  border-bottom: none;
+}
+
+.portfolio__project-link {
+  display: flex;
+  width: 100%;
+  text-decoration: none;
+  transition: opacity 0.5s linear;
+}
+
+.portfolio__project-link:hover {
+  cursor: pointer;
+  background-color: #424242;
+  opacity: 0.6;
+}
+
+.portfolio__project-link-plate {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 3;
+  color: #FFFFFF;
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .portfolio__project-link-plate {
+    font-size: 18px;
+    line-height: 3;
+  }
+}

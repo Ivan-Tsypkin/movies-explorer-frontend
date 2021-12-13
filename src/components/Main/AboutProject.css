@@ -1,0 +1,134 @@
+.about-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 110px 70px;
+  max-width: 1280px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .about-project {
+    padding: 90px 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-project {
+    padding: 70px 18px;
+  }
+}
+
+.about-project__heading {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 23px 0;
+  display: flex;
+  border-bottom: 1px solid #DADADA;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 1.21;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 600px) {
+  .about-project__heading {
+    font-size: 18px;
+    line-height: 1.21;
+  }
+}
+
+.about-project__about-diploma-section {
+  width: 100%;
+  padding: 70px 0 110px 0;
+  display: flex;
+  column-gap: 40px;
+}
+
+@media screen and (max-width: 600px) {
+  .about-project__about-diploma-section {
+    padding: 60px 18px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.about-diploma-section__heading {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.21;
+  color: #FFFFFF;
+  letter-spacing: -0.04em;
+}
+
+@media screen and (max-width: 600px) {
+  .about-diploma-section__heading {
+    text-align:  center;
+  }
+  .about-diploma-section__heading_type_last {
+    margin-top: 56px;
+  }
+}
+
+.about-diploma-section__description {
+  margin: 26px 0 0 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.428;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 600px) {
+  .about-diploma-section__description {
+    margin: 16px 0 0 0;
+    text-align:  center;
+  }
+}
+
+.about-project__timeline {
+  width: 100%;
+  display: grid;
+  row-gap: 14px;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(2, min-content);
+}
+
+@media screen and (max-width: 600px) {
+  .about-project__timeline {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.timeline__bar {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline__one-week {
+  height: 36px;
+  background-color: #3DDC84;
+  color: #838383;
+}
+
+.timeline__four-week {
+  height: 36px;
+  background-color: #303030;
+  color: #FFFFFF;
+}
+
+.timeline__caption {
+  color: #8B8B8B;
+}
