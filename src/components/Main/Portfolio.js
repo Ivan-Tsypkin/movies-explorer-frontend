@@ -9,9 +9,8 @@ export default function Portfolio({ portfolioRef }) {
       <div className="portfolio__about-me-section">
         <div className="portfolio__my-info">
           <h3 className="portfolio__my-name">Иван</h3>
-          <p className="portfolio__my-job">Фронтенд-разработчик, 30 лет</p>
-          <p className="portfolio__about-me-description">Я родился и живу в Саратове, закончил факультет экономики СГУ. У меня есть жена
-  и дочь. Я люблю слушать музыку, а ещё увлекаюсь бегом. Недавно начал кодить. С 2015 года работал в компании «СКБ Контур». После того, как прошёл курс по веб-разработке, начал заниматься фриланс-заказами и ушёл с постоянной работы.</p>
+          <p className="portfolio__my-job">Фронтенд-разработчик, 29 лет</p>
+          <p className="portfolio__about-me-description">Я родился и живу в Нижнем Новгороде, закончил факультет электроэнергетики в НГТУ им. Р.Е. Алексеева. Увлекаюсь гитарой, пишу инструментальные треки в стиле рок и блюз. Люблю космос, слежу за миром астрофизики. Занимаюсь веб-разработкой, меня это вдохновляет, упорно учусь и развиваю навыки в этой области.</p>
           <ul className="portfolio__social-links-list">
             <li className="portfolio__social-links-list-item"><Link to={{pathname: "https://vk.com/interseptor"}} target={"_blank"} className="portfolio__social-link">Вконтакте</Link></li>
             <li className="portfolio__social-links-list-item"><Link to={{pathname: "https://github.com/Ivan-Tsypkin"}} target={"_blank"} className="portfolio__social-link">Github</Link></li>
