@@ -1,10 +1,10 @@
 import Logo from '../Logo/Logo';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch, Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import BurgerMenu from './BurgerMenu';
 
 
-export default function Header() {
+export default function Header1() {
 
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
@@ -14,7 +14,6 @@ export default function Header() {
 
   return (
     <Switch>
-
 
       <Route exact path="/">
         <header className = "header header_type_landing">
@@ -32,186 +31,85 @@ export default function Header() {
         </header>
       </Route>
 
-
-      <Route path="/movies">
-        <header className = "header">
+      <Route path="*">
+        <header className="header">
           <div className="header__section">
             <Logo />
 
             <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} handleOpenBurgerMenu={handleOpenBurgerMenu}>
               <ul className="header__links-list header__links-list_type_burger-menu">
                 <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
-                    to="/"
+                  <NavLink
+                    exact to="/"
                     className="header__link header__link_type_burger-menu"
+                    activeClassName="header__link_type_active"
                     onClick={() => handleOpenBurgerMenu()}
-                  >Главная</Link>
+                  >Главная</NavLink>
                 </li>
                 <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
+                  <NavLink
                     to="/movies"
-                    className="header__link header__link_type_burger-menu header__link_type_active"
+                    className="header__link header__link_type_burger-menu"
+                    activeClassName="header__link_type_active"
                     onClick={() => handleOpenBurgerMenu()}
-                  >Фильмы</Link>
+                  >Фильмы</NavLink>
                 </li>
                 <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
+                  <NavLink
                     to="/saved-movies"
                     className="header__link header__link_type_burger-menu"
+                    activeClassName="header__link_type_active"
                     onClick={() => handleOpenBurgerMenu()}
-                  >Сохранённые фильмы</Link>
+                  >Сохранённые фильмы</NavLink>
                 </li>
                 <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
+                  <NavLink
                     to="/profile"
                     className="header__link header__link_type_burger-menu header__profile-link"
+                    activeClassName="header__link_type_active"
                     onClick={() => handleOpenBurgerMenu()}
                   >
                     <div className="header__profile-button">
                       Аккаунт
                       <div className="header__profile-icon"></div>
                     </div>
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </BurgerMenu>
 
             <ul className="header__links-list header__links-list_type_content">
-              <li className="header__links-list-item"><Link to="/movies" className="header__link header__link_type_active">Фильмы</Link></li>
-              <li className="header__links-list-item"><Link to="/saved-movies" className="header__link">Сохранённые фильмы</Link></li>
               <li className="header__links-list-item">
-                <Link to="/profile" className="header__link header__profile-link">
+                <NavLink
+                  to="/movies"
+                  className="header__link"
+                  activeClassName="header__link_type_active"
+                >Фильмы</NavLink>
+              </li>
+              <li className="header__links-list-item">
+                <NavLink
+                  to="/saved-movies"
+                  className="header__link"
+                  activeClassName="header__link_type_active"
+                >Сохранённые фильмы</NavLink>
+              </li>
+              <li className="header__links-list-item">
+                <NavLink
+                  to="/profile"
+                  className="header__link header__profile-link"
+                  activeClassName="header__link_type_active"
+                >
                   <div className="header__profile-button">
                     Аккаунт
                     <div className="header__profile-icon"></div>
                   </div>
-                </Link>
+                </NavLink>
               </li>
             </ul>
 
           </div>
         </header>
       </Route>
-
-
-      <Route path="/saved-movies">
-        <header className = "header">
-          <div className="header__section">
-            <Logo />
-
-            <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} handleOpenBurgerMenu={handleOpenBurgerMenu}>
-              <ul className="header__links-list header__links-list_type_burger-menu">
-                <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
-                    to="/"
-                    className="header__link header__link_type_burger-menu"
-                    onClick={() => handleOpenBurgerMenu()}
-                  >Главная</Link>
-                </li>
-                <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
-                    to="/movies"
-                    className="header__link header__link_type_burger-menu"
-                    onClick={() => handleOpenBurgerMenu()}
-                  >Фильмы</Link>
-                </li>
-                <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
-                    to="/saved-movies"
-                    className="header__link header__link_type_burger-menu header__link_type_active"
-                    onClick={() => handleOpenBurgerMenu()}
-                  >Сохранённые фильмы</Link>
-                </li>
-                <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
-                    to="/profile"
-                    className="header__link header__link_type_burger-menu header__profile-link"
-                    onClick={() => handleOpenBurgerMenu()}
-                  >
-                    <div className="header__profile-button">
-                      Аккаунт
-                      <div className="header__profile-icon"></div>
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-            </BurgerMenu>
-
-            <ul className="header__links-list header__links-list_type_content">
-              <li className="header__links-list-item"><Link to="/movies" className="header__link">Фильмы</Link></li>
-              <li className="header__links-list-item"><Link to="/saved-movies" className="header__link header__link_type_active">Сохранённые фильмы</Link></li>
-              <li className="header__links-list-item">
-                <Link to="/profile" className="header__link header__profile-link">
-                  <div className="header__profile-button">
-                    Аккаунт
-                    <div className="header__profile-icon"></div>
-                  </div>
-                </Link>
-              </li>
-            </ul>
-
-          </div>
-        </header>
-      </Route>
-
-
-      <Route path="/profile">
-        <header className = "header">
-          <div className="header__section">
-            <Logo />
-
-            <BurgerMenu isBurgerMenuOpen={isBurgerMenuOpen} handleOpenBurgerMenu={handleOpenBurgerMenu}>
-              <ul className="header__links-list header__links-list_type_burger-menu">
-                <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
-                    to="/"
-                    className="header__link header__link_type_burger-menu"
-                    onClick={() => handleOpenBurgerMenu()}
-                  >Главная</Link></li>
-                <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
-                    to="/movies"
-                    className="header__link header__link_type_burger-menu"
-                    onClick={() => handleOpenBurgerMenu()}
-                  >Фильмы</Link></li>
-                <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
-                    to="/saved-movies"
-                    className="header__link header__link_type_burger-menu"
-                    onClick={() => handleOpenBurgerMenu()}
-                  >Сохранённые фильмы</Link></li>
-                <li className="header__links-list-item header__links-list-item_type_burger-menu">
-                  <Link
-                    to="/profile"
-                    className="header__link header__link_type_burger-menu header__profile-link header__link_type_active"
-                    onClick={() => handleOpenBurgerMenu()}
-                  >
-                    <div className="header__profile-button">
-                      Аккаунт
-                      <div className="header__profile-icon"></div>
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-            </BurgerMenu>
-
-            <ul className="header__links-list  header__links-list_type_content">
-              <li className="header__links-list-item"><Link to="/movies" className="header__link">Фильмы</Link></li>
-              <li className="header__links-list-item"><Link to="/saved-movies" className="header__link">Сохранённые фильмы</Link></li>
-              <li className="header__links-list-item">
-                <Link to="/profile" className="header__link header__profile-link header__link_type_active">
-                  <div className="header__profile-button">
-                    Аккаунт
-                    <div className="header__profile-icon"></div>
-                  </div>
-                </Link>
-              </li>
-            </ul>
-
-          </div>
-        </header>
-      </Route>
-
 
     </Switch>
   )
