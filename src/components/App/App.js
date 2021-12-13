@@ -10,23 +10,6 @@ import Login from '../Login/Login';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
 import { Route, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-/* import Header from '../Header';
-import Footer from '../Footer';
-import Main from '../Main';
-import PopupWithForm from '../PopupWithForm';
-import EditProfilePopup from '../EditProfilePopup'
-import EditAvatarPopup from '../EditAvatarPopup'
-import AddPlacePopup from '../AddPlacePopup'
-import ImagePopup from '../ImagePopup';
-import InfoTooltip from '../InfoTooltip';
-import Login from '../Login';
-import Register from '../Register';
-import ProtectedRoute from '../ProtectedRoute';
-import { api } from '../utils/Api';
-import * as apiAuth from '../utils/apiAuth';
-import { CurrentUserContext } from '../contexts/CurrentUserContext';
-import { useState, useEffect } from 'react';
-import { Route, Switch, useHistory } from 'react-router-dom'; */
 
 
 function App() {
