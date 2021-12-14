@@ -1,0 +1,87 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #222222;
+  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card__image {
+  height: 151px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card__image-link {
+  display: flex;
+  transition: opacity 0.5s linear;
+  cursor: pointer;
+}
+
+.card__image-link:hover {
+  opacity: 0.6;
+}
+
+.card__caption {
+  display: flex;
+  column-gap: 10px;
+  justify-content: space-between;
+  padding: 14px 12px 10px 12px;
+  box-sizing: border-box;
+}
+
+.card__title {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.21;
+  color: #FFFFFF;
+}
+
+.card__like-button {
+  padding: 0;
+  border: none;
+  background-color: #313131;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: all .2s linear;
+}
+
+.card__like-button:hover {
+  opacity: 0.6;
+}
+
+.card__like-button_active {
+  background-color: #2BE080;
+}
+
+.card__unlike-button {
+  padding: 0;
+  border: none;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  transition: all .2s linear;
+  background: url("../../images/x-icon.svg") center no-repeat;
+}
+
+.card__unlike-button:hover {
+  opacity: 0.6;
+}
+
+.card__duration {
+  margin: 0;
+  padding: 0 12px 14px 12px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 1.21;
+  color: #8B8B8B;
+}
