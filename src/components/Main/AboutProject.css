@@ -69,9 +69,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .about-diploma-section__heading {
-    text-align:  center;
-  }
   .about-diploma-section__heading_type_last {
     margin-top: 56px;
   }
@@ -89,7 +86,6 @@
 @media screen and (max-width: 600px) {
   .about-diploma-section__description {
     margin: 16px 0 0 0;
-    text-align:  center;
   }
 }
 
@@ -120,7 +116,6 @@
 .timeline__one-week {
   height: 36px;
   background-color: #3DDC84;
-  color: #838383;
 }
 
 .timeline__four-week {

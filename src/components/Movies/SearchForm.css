@@ -55,6 +55,10 @@
   box-sizing: border-box;
 }
 
+.search__bar_focused {
+  outline: 1px solid white;
+}
+
 @media screen and (max-width: 600px) {
   .search__bar {
     padding-left: 18px;
@@ -73,14 +77,14 @@
   color: #8B8B8B;
 }
 
+.search__form-item:focus {
+  outline: none;
+}
+
 @media screen and (max-width: 600px) {
   .search__form-item {
     font-size: 11px;
   }
-}
-
-.search__form-item:focus {
-  outline: none;
 }
 
 .search__submit-button {
