@@ -79,7 +79,17 @@
   line-height: 1.21;
   color: #FFFFFF;
   cursor: pointer;
-  transition: opacity 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.register__submit-button_disabled {
+  background-color: #F8F8F8;
+  color: #000000;
+  cursor: auto;
+}
+
+.register__submit-button_disabled:hover {
+  opacity: 1;
 }
 
 @media screen and (max-width: 600px) {

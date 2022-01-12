@@ -1,0 +1,111 @@
+.popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  max-width: 100vw;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup__success {
+  background-image: url(../../images/Success.svg);
+  background-position: center;
+  margin: auto;
+  margin-top: 26px;
+  width: 120px;
+  height: 120px;
+}
+
+.popup__success_type_unsuccess {
+  background-image: url(../../images/Unsuccess.svg);
+}
+
+.popup__container {
+  position: relative;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  max-width: 430px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  padding: 34px 36px 37px 36px;
+  z-index: 3;
+}
+
+@media screen and (max-width: 618px) {
+  .popup__container {
+    max-width: calc(100% - (100% * 0.12));
+    padding: 25px 22px 25px 22px;
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(45deg);
+  }
+  to {
+    transform: rotate(225deg);
+  }
+}
+
+.popup__close-button {
+  position: absolute;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  right: -40px;
+  top: -40px;
+  background: url(../../images/Close-Icon.svg) center /cover transparent no-repeat;
+  transform: rotate(45deg);
+  transition: opacity 0.5s linear;
+}
+
+.popup__close-button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  animation: rotation 1s ease-in-out;
+}
+
+@media screen and (max-width: 618px) {
+  .popup__close-button {
+    width: 26px;
+    height: 26px;
+    right: 5px;
+  }
+}
+
+.popup__heading {
+  margin: 0;
+  max-width: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.21;
+}
+
+@media screen and (max-width: 618px) {
+  .popup__heading {
+    font-size: 18px;
+  }
+}
+
+.popup__heading_type_info-tooltip {
+  margin-top: 32px;
+  margin-bottom: 26px;
+  text-align: center;
+}
