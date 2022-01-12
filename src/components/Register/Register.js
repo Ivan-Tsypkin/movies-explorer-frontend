@@ -95,6 +95,7 @@ export default function Register({ onRegisterSubmit, isLoggedIn, history }) {
           type="submit"
           className={`register__submit-button ${!isFormValid && `register__submit-button_disabled`}`}
           aria-label="Отправить данные"
+          disabled={!isFormValid}
         >Зарегистрироваться</button>
 
       </form>

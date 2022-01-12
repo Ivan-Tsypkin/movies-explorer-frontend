@@ -101,7 +101,7 @@ export default function Profile({ onSignOut, onUpdateUser }) {
             type="submit"
             className={`profile__submit-button ${(!isFormValid || isButtonDisabled) && `profile__submit-button_disabled`}`}
             aria-label="Отправить данные"
-            disabled={isButtonDisabled}
+            disabled={(isButtonDisabled || !isFormValid)}
           >Сохранить</button>
 
         </form>

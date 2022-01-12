@@ -25,7 +25,7 @@ export default function Login({ onLoginSubmit, isLoggedIn, history }) {
       setErrors({...errors,
         email: 'Введите корректный e-mail.',
       });
-      setIsFormValid(false)
+      setIsFormValid(false);
     }
   }, [values.email])
 
@@ -79,6 +79,7 @@ export default function Login({ onLoginSubmit, isLoggedIn, history }) {
           type="submit"
           className={`login__submit-button ${!isFormValid && `login__submit-button_disabled`}`}
           aria-label="Отправить данные"
+          disabled={!isFormValid}
         >Войти</button>
 
       </form>
