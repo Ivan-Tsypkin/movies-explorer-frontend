@@ -81,7 +81,7 @@ export const addMovieToFave = (movie) => {
       year: movie.year || 'year',
       description: movie.description || 'description',
       image: movie.image.url || 'image-url',
-      trailer: movie.trailerLink || 'trailer-link',
+      trailerLink: movie.trailerLink || 'trailer-link',
       nameRU: movie.nameRU || 'nameRU',
       nameEN: movie.nameEN || 'nameEN',
       thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,

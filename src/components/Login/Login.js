@@ -6,11 +6,28 @@ import { useFormValidation } from '../../hooks/useForm';
 
 export default function Login({ onLoginSubmit, isLoggedIn, history }) {
 
-  const {values, handleChange, errors, isFormValid, resetForm} = useFormValidation();
+  const {values,
+    handleChange,
+    errors,
+    isFormValid,
+    resetForm,
+    setErrors,
+    setIsFormValid
+  } = useFormValidation();
 
   useEffect(() => {
     if(isLoggedIn) {history.push("/")};
   });
+
+  useEffect(() => {
+    const str = values.email || "";
+    if (!str.match(/.+@.+\...+/i)) {
+      setErrors({...errors,
+        email: 'Введите корректный e-mail.',
+      });
+      setIsFormValid(false)
+    }
+  }, [values.email])
 
   useEffect(() => {
     resetForm({}, {

@@ -6,7 +6,14 @@ export default function Profile({ onSignOut, onUpdateUser }) {
 
   const currentUser = useContext(CurrentUserContext);
 
-  const {values, handleChange, errors, isFormValid, resetForm} = useFormValidation();
+  const {values,
+    handleChange,
+    errors,
+    isFormValid,
+    resetForm,
+    setErrors,
+    setIsFormValid
+  } = useFormValidation();
 
   const [isEditing, setIsEditing] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
@@ -36,6 +43,16 @@ export default function Profile({ onSignOut, onUpdateUser }) {
     }
   }, [values.name, values.email, currentUser.name, currentUser.email]);
 
+  useEffect(() => {
+    const str = values.email || "";
+    if (!str.match(/.+@.+\...+/i)) {
+      setErrors({...errors,
+        email: 'Введите корректный e-mail.',
+      });
+      setIsFormValid(false)
+    }
+  }, [values.email])
+
   function handleEditButton() {
     setIsEditing(true);
   }
@@ -63,7 +80,7 @@ export default function Profile({ onSignOut, onUpdateUser }) {
               minLength="1"
               maxLength="60"
               required
-              value={values.name || ''}
+              value={values.name || ""}
               onChange={handleChange}
             />
           <span className="profile__error profile__error_type_name profile__error_visible">{errors.name || ""}</span>
@@ -75,7 +92,7 @@ export default function Profile({ onSignOut, onUpdateUser }) {
             name="email"
             id="email"
             required
-            value={values.email || ''}
+            value={values.email || ""}
             onChange={handleChange}
           />
           <span className="profile__error profile__error_type_email profile__error_visible">{errors.email || ""}</span>
@@ -88,6 +105,13 @@ export default function Profile({ onSignOut, onUpdateUser }) {
           >Сохранить</button>
 
         </form>
+
+        <button
+          className="profile__button profile__logout-button profile__logout-button_type_edit"
+          type="button"
+          aria-label="Выйти из аккаунта"
+          onClick={onSignOut}
+        >Выйти из аккаунта</button>
       </>
       :
       <>

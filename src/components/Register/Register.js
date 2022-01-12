@@ -6,11 +6,28 @@ import { useFormValidation } from '../../hooks/useForm';
 
 export default function Register({ onRegisterSubmit, isLoggedIn, history }) {
 
-  const {values, handleChange, errors, isFormValid, resetForm} = useFormValidation();
+  const {values,
+    handleChange,
+    errors,
+    isFormValid,
+    resetForm,
+    setErrors,
+    setIsFormValid
+  } = useFormValidation();
 
   useEffect(() => {
     if(isLoggedIn) {history.push("/")};
   });
+
+  useEffect(() => {
+    const str = values.email || "";
+    if (!str.match(/.+@.+\...+/i)) {
+      setErrors({...errors,
+        email: 'Введите корректный e-mail.',
+      });
+      setIsFormValid(false)
+    }
+  }, [values.email])
 
   useEffect(() => {
     resetForm({}, {
@@ -20,6 +37,8 @@ export default function Register({ onRegisterSubmit, isLoggedIn, history }) {
       password: 'Заполните это поле.'
     }, false)
   }, [])
+
+
 
   function handleSubmit(e) {
     e.preventDefault();

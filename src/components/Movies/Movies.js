@@ -28,7 +28,7 @@ export default function Movies({
 
   return (
     <>
-      <SearchForm onSearchSubmit={onSearchSubmit}/>
+      <SearchForm onSearchSubmit={onSearchSubmit} saveSearchOptions={true}/>
       {isLoading
         ? <Preloader />
         : <MoviesCardList>

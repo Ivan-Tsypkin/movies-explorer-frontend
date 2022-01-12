@@ -14,7 +14,7 @@ export default function SavedMovies({
 
   return (
     <>
-      <SearchForm onSearchSubmit={onSearchSubmit} />
+      <SearchForm onSearchSubmit={onSearchSubmit} saveSearchOptions={false}/>
       {isLoading
       ? <Preloader />
       : <MoviesCardList>

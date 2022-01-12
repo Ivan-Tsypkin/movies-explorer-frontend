@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function SearchForm({ onSearchSubmit }) {
+export default function SearchForm({ onSearchSubmit, saveSearchOptions }) {
 
   const LOCAL_STORAGE_SEARCH_OPTIONS = 'searchOptions'; //Место хранения опций поиска в localStorage
 
@@ -25,22 +25,28 @@ export default function SearchForm({ onSearchSubmit }) {
 
   //Подстановка предыдущих опций поиска в форму поиска
   useEffect(() => {
+    if (saveSearchOptions) {
     const searchOptions = getLocalStorageSearchFormOptions();
     setText(searchOptions.text);
     setChecked(searchOptions.checked);
+    };
   }, [])
 
   //Повторная фильтрация после изменения состояния чекбокса формы поиска
   useEffect(() => {
     onSearchSubmit(text, checked);
-    setLocalStorageSearchFormOptions(text, checked);
+    if (saveSearchOptions) {
+      setLocalStorageSearchFormOptions(text, checked);
+    }
   }, [checked])
 
   //Функция сабмита формы поиска
   function handleSubmit(e) {
     e.preventDefault();
     onSearchSubmit(text, checked);
+    if (saveSearchOptions) {
     setLocalStorageSearchFormOptions(text, checked);
+    }
   }
 
   return (

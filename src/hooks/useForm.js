@@ -24,5 +24,5 @@ export function useFormValidation() {
     [setValues, setErrors, setIsFormValid]
   )
 
-  return {values, handleChange, errors, isFormValid, resetForm}
+  return {values, handleChange, errors, isFormValid, resetForm, setValues, setErrors, setIsFormValid}
 }
