@@ -1,4 +1,4 @@
-export const BASE_SERVER_URL = 'http://localhost:3005';
+export const BASE_SERVER_URL = 'https://api.sirius.nomoredomains.work';
 const HEADERS = {
   'Accept': 'application/json',
   'Content-Type': 'application/json'
