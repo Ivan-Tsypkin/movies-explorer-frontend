@@ -2,20 +2,32 @@ import SearchForm from './SearchForm';
 import MoviesCardList from './MoviesCardList';
 import MoviesCard from './MoviesCard';
 import Preloader from './Preloader';
+import NoMovieFound from './NoMovieFound';
 
-export default function SavedMovies({ isLoading }) {
+export default function SavedMovies({
+  isLoading,
+  faveMovies,
+  onSearchSubmit,
+  faveMoviesIdList,
+  onMovieRemove
+}) {
 
   return (
     <>
-      <SearchForm />
+      <SearchForm onSearchSubmit={onSearchSubmit} saveSearchOptions={false}/>
       {isLoading
       ? <Preloader />
       : <MoviesCardList>
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
-          <MoviesCard />
+          {faveMovies.length ? "" : <NoMovieFound />}
+          {faveMovies.map(movie => {
+              return (<MoviesCard
+                key={movie._id}
+                movie={movie}
+                faveMoviesIdList={faveMoviesIdList}
+                onMovieRemove={onMovieRemove}
+              />)
+          })
+          }
         </MoviesCardList>}
     </>
   )

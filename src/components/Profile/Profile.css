@@ -81,6 +81,10 @@
   color: #EE3465;
 }
 
+.profile__logout-button_type_edit {
+  margin-top: 50px;
+}
+
 .profile__form {
   margin: 0;
   padding: 0;
@@ -135,7 +139,13 @@
   line-height: 1.21;
   color: #FFFFFF;
   cursor: pointer;
-  transition: opacity 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.profile__submit-button_disabled {
+  background-color: #F8F8F8;
+  color: #000000;
+  cursor: auto;
 }
 
 @media screen and (max-width: 600px) {

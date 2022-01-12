@@ -1,6 +1,5 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts.css);
-@import url(./components/App/App.css);
 @import url(./components/Header/Header.css);
 @import url(./components/Logo/Logo.css);
 @import url(./components/Header/BurgerMenu.css);
@@ -19,3 +18,6 @@
 @import url(./components/Register/Register.css);
 @import url(./components/Login/Login.css);
 @import url(./components/NotFoundPage/NotFoundPage.css);
+@import url(./components/Movies/NoMovieFound.css);
+@import url(./components/InfoPopup/InfoPopup.css);
+@import url(./components/App/App.css);

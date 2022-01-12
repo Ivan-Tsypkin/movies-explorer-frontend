@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useHistory } from "react-router";
 
-export default function NotFoundPage() {
-
-  const history = useHistory();
+export default function NotFoundPage({ history }) {
 
   return (
     <div className="not-found-page">

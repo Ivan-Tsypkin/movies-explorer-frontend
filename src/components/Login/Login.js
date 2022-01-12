@@ -1,18 +1,53 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect } from 'react';
 import Logo from '../Logo/Logo';
+import { useFormValidation } from '../../hooks/useForm';
 
 
-export default function Login() {
+export default function Login({ onLoginSubmit, isLoggedIn, history }) {
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const {values,
+    handleChange,
+    errors,
+    isFormValid,
+    resetForm,
+    setErrors,
+    setIsFormValid
+  } = useFormValidation();
+
+  useEffect(() => {
+    if(isLoggedIn) {history.push("/")};
+  });
+
+  useEffect(() => {
+    const str = values.email || "";
+    if (!str.match(/.+@.+\...+/i)) {
+      setErrors({...errors,
+        email: 'Введите корректный e-mail.',
+      });
+      setIsFormValid(false);
+    }
+  }, [values.email])
+
+  useEffect(() => {
+    resetForm({}, {
+      ...errors,
+      name: 'Заполните это поле.',
+      email: 'Заполните это поле.',
+      password: 'Заполните это поле.'
+    }, false)
+  }, [])
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    onLoginSubmit(values.password, values.email);
+  }
 
   return (
     <div className="login">
       <Logo />
       <h1 className="login__heading">Рады видеть!</h1>
-      <form className="login__form">
+      <form className="login__form" onSubmit = {handleSubmit}>
 
         <label className="login__form-item-label" htmlFor="email">E-mail</label>
         <input
@@ -21,10 +56,10 @@ export default function Login() {
           name="email"
           id="email"
           required
-          value={email || ''}
-          onChange={(e) => setEmail(e.target.value)}
+          value={values.email || ''}
+          onChange={handleChange}
         />
-        <span className="login__error login__error_type_email">Что-то пошло не так...</span>
+        <span className="login__error login__error_type_email login__error_visible">{errors.email || ""}</span>
 
         <label className="login__form-item-label" htmlFor="password">Пароль</label>
         <input
@@ -32,16 +67,19 @@ export default function Login() {
           className="login__form-item"
           name="password"
           id="password"
+          minLength="6"
+          maxLength="60"
           required
-          value={password || ''}
-          onChange={(e) => setPassword(e.target.value)}
+          value={values.password || ''}
+          onChange={handleChange}
         />
-        <span className="login__error login__error_type_password login__error_visible">Что-то пошло не так...</span>
+        <span className="login__error login__error_type_password login__error_visible">{errors.password || ""}</span>
 
         <button
           type="submit"
-          className="login__submit-button"
+          className={`login__submit-button ${!isFormValid && `login__submit-button_disabled`}`}
           aria-label="Отправить данные"
+          disabled={!isFormValid}
         >Войти</button>
 
       </form>
